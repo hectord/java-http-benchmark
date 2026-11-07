@@ -8,6 +8,11 @@ Machine under test: **2 vCPU Intel Haswell @ 2.6 GHz (KVM), 3.7 GB RAM, no GPU,
 Debian 13, JDK 21.** Wake-up call: [`../README` note on the box](../) — it is a
 small cloud VM, so treat all numbers as *per-2-vCPUs*, not as a framework verdict.
 
+> **Disclosure:** this whole repo is fully vibecoded (written by an AI agent,
+> committed and pushed unattended) and all numbers were measured on my own
+> server, not on a tuned benchmark host. Read it as a reproducible experiment,
+> not as an authoritative framework comparison.
+
 ## The five apps
 
 | Folder | Stack | What it isolates |
