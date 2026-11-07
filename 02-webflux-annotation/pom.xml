@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  App 02: Spring WebFlux, annotation style (@RestController returning Mono).
+  This is what "Java + Reactor Mono" looks like in a typical Spring project.
+  Note: spring-boot-starter-web (Tomcat) is NOT here on purpose - see app 04.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.5.16</version>
+    <relativePath/>
+  </parent>
+
+  <groupId>bench</groupId>
+  <artifactId>02-webflux-annotation</artifactId>
+  <version>1.0</version>
+
+  <properties>
+    <java.version>21</java.version>
+  </properties>
+
+  <dependencies>
+    <!-- webflux only. If spring-boot-starter-web is also present, Spring Boot
+         deduces SERVLET and silently starts Tomcat instead of Netty - that
+         mistake is what created the first bogus "WebFlux" numbers. -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-webflux</artifactId>
+    </dependency>
+  </dependencies>
+</project>

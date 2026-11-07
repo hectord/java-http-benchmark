@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  App 01: the pure Project Reactor ceiling.
+  Deliberately has NO Spring on the classpath: reactor-netty-http only.
+  Whatever this measures is "what Mono costs", everything below it in the
+  other folders is "what the framework on top of Mono costs".
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>bench</groupId>
+  <artifactId>01-raw-reactor-netty</artifactId>
+  <version>1.0</version>
+
+  <properties>
+    <maven.compiler.release>21</maven.compiler.release>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- versions were pinned to whatever Spring Boot 3.5.16 resolves,
+         so this app is comparable with 02/03/04 -->
+    <reactor-netty.version>1.2.18</reactor-netty.version>
+    <slf4j.version>2.0.18</slf4j.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>io.projectreactor.netty</groupId>
+      <artifactId>reactor-netty-http</artifactId>
+      <version>${reactor-netty.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+  </dependencies>
+</project>

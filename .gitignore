@@ -1,0 +1,8 @@
+# Maven build output
+target/
+
+# Generated, machine-specific dependency classpath cache
+cp.txt
+
+# Server logs produced by run-all.sh
+results/*.log
